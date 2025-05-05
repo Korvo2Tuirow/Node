@@ -4,7 +4,7 @@
   "description": "Primeiras aulas de Node.js",
   "main": "teste.js",
   "scripts": {
-    "start": "ts-node ./teste.ts"
+    "start": "ts-node ./src/teste.ts"
   },
   "author": "korvo",
   "license": "ISC",
