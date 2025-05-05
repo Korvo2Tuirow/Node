@@ -4,12 +4,15 @@
   "description": "Primeiras aulas de Node.js",
   "main": "teste.js",
   "scripts": {
-    "start": "ts-node ./src/teste.ts"
+    "start": "node --import=tsx --watch ./src/teste.ts",
+    "teste": "node --import=tsx --watch ./src/outro.ts"
   },
   "author": "korvo",
   "license": "ISC",
   "devDependencies": {
-    "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "tsx": "^4.19.4"
   }
 }

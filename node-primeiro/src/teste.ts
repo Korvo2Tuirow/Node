@@ -1,7 +1,7 @@
 console.log("Hello, World!");
 
 let nome:string = "Korvo";
-let idade:number = 20; 
+let idade:number = 40; 
 
 console.log(`Meu nome é ${nome} e tenho ${idade} anos.`);
 
