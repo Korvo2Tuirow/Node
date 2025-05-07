@@ -4,12 +4,13 @@
   "description": "Primeiras aulas de Node.js",
   "main": "teste.js",
   "scripts": {
-    "start": "node --import=tsx --watch ./src/teste.ts",
+    "start": "node --env-file=.env --import=tsx --watch ./src/teste.ts",
     "teste": "node --import=tsx --watch ./src/outro.ts"
   },
   "author": "korvo",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^22.15.14",
     "typescript": "^5.8.3"
   },
   "dependencies": {
