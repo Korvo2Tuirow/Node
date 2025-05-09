@@ -13,9 +13,29 @@ server.use(express.static(path.join(__dirname, '../public'))); // Permite o envi
 
 
 server.get('/ping', (req, res) => {
-  res.send({pong: true}); // Responde com "Pong!" quando a rota /ping é acessada
+  res.send({ pong: true }); // Responde com "Pong!" quando a rota /ping é acessada
 });
 
+server.get('/produtos/:id', (req, res) => {
+  console.log(req.params.id); // Acessa o parâmetro id da rota
+  res.json({ id: "abc" });
+});
+
+server.get('/voos/:from/:to', (req, res) => {
+
+  const { from, to } = req.params; // Desestruturação dos parâmetros da rota
+
+  res.json({
+    fligth: {
+      from: from.toUpperCase(),
+      to: to.toUpperCase(),
+      price: 2546.55
+    }
+  });
+
+  // res.json({ fligth: {from: (req.params.from), to:(req.params.to), price: 2546.55} }); 
+
+});
 
 server.get('/', (req, res) => {
 
