@@ -12,8 +12,14 @@ server.use(express.urlencoded({ extended: true })); // Permite o envio de dados 
 server.use(express.static(path.join(__dirname, '../public'))); // Permite o envio de arquivos estáticos
 
 
+server.get('/ping', (req, res) => {
+  res.send({pong: true}); // Responde com "Pong!" quando a rota /ping é acessada
+});
+
+
 server.get('/', (req, res) => {
-  //res.send('Hello World!');
+
+  res.send('Hello World!');
 
   let name = 'Lucas';
   let age = 25;
