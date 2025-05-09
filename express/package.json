@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "express": "^5.1.0",
+    "helmet": "^8.1.0",
     "tsc": "^2.0.4",
     "tsx": "^4.19.4"
   }
