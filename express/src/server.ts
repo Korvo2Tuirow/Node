@@ -2,6 +2,8 @@ import express from 'express';
 import helmet from 'helmet';
 import path from 'path';
 
+import router from './routes';
+
 
 const server = express();
 const PORT = 3333;
@@ -13,17 +15,17 @@ server.use(express.static(path.join(__dirname, '../public'))); // Permite o envi
 
 
 server.get('/ping', (req, res) => {
-  res.send({ pong: true }); // Responde com "Pong!" quando a rota /ping é acessada
+res.send({ pong: true }); // Responde com "Pong!" quando a rota /ping é acessada ROTA ESTATICA
 });
 
 server.get('/produtos/:id', (req, res) => {
-  console.log(req.params.id); // Acessa o parâmetro id da rota
+  console.log(req.params.id); // Acessa o parâmetro id da rota ROTA DINAMICA
   res.json({ id: "abc" });
 });
 
 server.get('/voos/:from/:to', (req, res) => {
 
-  const { from, to } = req.params; // Desestruturação dos parâmetros da rota
+  const { from, to } = req.params; // Desestruturação dos parâmetros da rota ROTA DINAMICA
 
   res.json({
     fligth: {
@@ -47,6 +49,14 @@ server.get('/', (req, res) => {
   res.json({ name, age })// Envia um JSON como resposta
 
 });
+
+server.use('/',router); // Adiciona as rotas definidas no arquivo routes/index.ts
+
+
+
+
+
+
 
 server.listen(PORT, () => {
   console.log(`Server rodando na porta 3333 http://localhost:${PORT}`);
